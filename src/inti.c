@@ -1,5 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   inti.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/18 14:18:17 by wcapt             #+#    #+#             */
+/*   Updated: 2025/02/18 14:58:17 by wcapt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	count_numbers(char *str)
+{
+	int	num_arg;
+	int	i;
+
+	num_arg = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == " ")
+			num_arg++;
+		i++;
+	}
+	num_arg++;
+	return (num_arg);
+}
 
 char *merge_str(int argc, char **argv)
 {
@@ -21,7 +49,7 @@ int init_stacks(int argc, char **argv, t_stacks stacks)
 
 	str = merge_str(argc, argv);
 	tab_number = ft_split(str, ' ');
-	num_count = count_numbers(str); // Faire la fonction count_numbers (compte chaque argument)
+	num_count = count_numbers(str);
 	if (argc > 2)
 		free(str);
 	stacks->stack_a = (sizeof(int) * num_count);
@@ -33,7 +61,7 @@ int init_stacks(int argc, char **argv, t_stacks stacks)
 	}
 	i = -1;
 	while (++i < num_count)
-		stacks->stack_a[i] = ft_atol(tab_number[i])
+		stacks->stack_a[i] = ft_atol(tab_number[i]) //Faire ft_atol
 	free_stacks(tab_number);
 	stacks->size_a = num_count;
 	stacks->size_b = 0;
