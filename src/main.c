@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:54 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/18 14:17:58 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/19 20:33:08 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int main(int argc, char **argv)
     
     if (!checks(argc, argv))
         return (1);
-    if (!init_stacks(argc, argv, stacks))
+    if (!init_stacks(argc, argv, &stacks))
         return (1);
+    //push_swap(&stacks);
+	free_stacks(&stacks);
     return (0);
 }

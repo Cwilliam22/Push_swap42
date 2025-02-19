@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   stack_ab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 14:18:35 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/19 14:28:21 by wcapt            ###   ########.fr       */
+/*   Created: 2025/02/19 18:03:15 by wcapt             #+#    #+#             */
+/*   Updated: 2025/02/19 20:31:36 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    free_tab(char **tab_arg)
+void    swap_ab(t_stacks *stacks)
 {
-    if (!tab_arg)
-        return;
-    while (*tab_arg)
-    {
-        free (*tab_arg);
-        tab_arg++;
-    }
-    free(tab_arg);
+    swap_a(stacks);
+    swap_b(stacks);
+    ft_printf("ss \n");
+}
+void    rotate_ab(t_stacks *stacks)
+{
+    rotate_a(stacks);
+    rotate_b(stacks);
+    ft_printf("rr \n");
 }
 
-void    free_stacks(t_stacks *stacks)
+void    reverse_rotate_ab(t_stacks *stacks)
 {
-    if (stacks->stack_a)
-        free(stacks->stack_a);
-    if (stacks->stack_b)
-        free(stacks->stack_b);
-    stacks->stack_a = NULL;
-    stacks->stack_b = NULL;
+    reverse_rotate_a(stacks);
+    reverse_rotate_b(stacks);
+    ft_printf("rrr \n");
 }

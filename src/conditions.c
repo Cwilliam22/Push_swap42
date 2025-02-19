@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:00:00 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/18 17:01:23 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/19 14:00:23 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int is_empty(char **tab_arg)
 {
     while (*tab_arg)
     {
-        if (**tab_arg == '/0')
+        if (**tab_arg == '\0')
             return (0);
         tab_arg++;
     }
@@ -32,9 +32,13 @@ int not_number(char **tab_arg)
     while (tab_arg[i])
     {
         j = 0;
+        if (tab_arg[i][j] == '-' || tab_arg[i][j] == '+')
+            j++;
+        if (tab_arg[i][j] == '\0')
+            return (0);
         while (tab_arg[i][j])
         {
-            if (tab_arg[i][j] <= 48 || tab_arg[i][j] >= 57)
+            if (tab_arg[i][j] < 48 || tab_arg[i][j] > 57)
                 return (0);
             j++;
         }
@@ -42,7 +46,6 @@ int not_number(char **tab_arg)
     }
     return (1);
 }
-// Faut-il integrer le "-" pour les negatifs aux possibilites OK ?
 
 int int_max(char **tab_arg)
 {

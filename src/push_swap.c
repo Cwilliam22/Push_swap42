@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 14:18:35 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/19 14:28:21 by wcapt            ###   ########.fr       */
+/*   Created: 2025/02/19 16:21:53 by wcapt             #+#    #+#             */
+/*   Updated: 2025/02/19 18:05:49 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    free_tab(char **tab_arg)
-{
-    if (!tab_arg)
-        return;
-    while (*tab_arg)
-    {
-        free (*tab_arg);
-        tab_arg++;
-    }
-    free(tab_arg);
-}
+// Push 2 premiers nombres de a vers b
 
-void    free_stacks(t_stacks *stacks)
-{
-    if (stacks->stack_a)
-        free(stacks->stack_a);
-    if (stacks->stack_b)
-        free(stacks->stack_b);
-    stacks->stack_a = NULL;
-    stacks->stack_b = NULL;
-}
+
+// swap A (sa)
+// swap B (sb)
+// swap A et B (ss)
+// push A (pa)
+// push B (pb)
+// rotate A (ra)
+// rotate B (rb)
+// rotate A et B (rr)
+// reverse rotate A (rra)
+// reverse rotate B (rrb)
+// reverse rotate A et B (rrr)
