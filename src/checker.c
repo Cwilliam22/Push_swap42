@@ -6,13 +6,13 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:19:00 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/19 13:49:22 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/20 13:57:51 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int checks_conditions(char **tab_arg)
+int	checks_conditions(char **tab_arg)
 {
 	if (is_empty(tab_arg))
 		return (2);
@@ -27,7 +27,7 @@ int checks_conditions(char **tab_arg)
 	return (0);
 }
 
-int checks(int argc, char **argv)
+int	checks(int argc, char **argv)
 {
 	char	**tab_arg;
 	char	*string_arg;

@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:18:17 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/19 14:35:06 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/20 13:59:53 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	count_numbers(char *str)
 	return (num_arg);
 }
 
-char *merge_str(int argc, char **argv)
+char	*merge_str(int argc, char **argv)
 {
-	char *str;
+	char	*str;
 
 	if (argc > 2)
 		str = concat_args(argc, argv);
@@ -40,12 +40,12 @@ char *merge_str(int argc, char **argv)
 	return (str);
 }
 
-int init_stacks(int argc, char **argv, t_stacks *stacks)
+int	init_stacks(int argc, char **argv, t_stacks *stacks)
 {
-	char *str;
-	char **tab_number;
-	int num_count;
-	int i;
+	char	*str;
+	char	**tab_number;
+	int		num_count;
+	int		i;
 
 	str = merge_str(argc, argv);
 	tab_number = ft_split(str, ' ');
@@ -66,5 +66,5 @@ int init_stacks(int argc, char **argv, t_stacks *stacks)
 	stacks->size_a = num_count;
 	stacks->size_b = 0;
 	stacks->max_size = num_count;
-	return(1);
+	return (1);
 }
