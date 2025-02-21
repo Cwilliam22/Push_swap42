@@ -6,7 +6,7 @@
 #    By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/19 13:14:48 by wcapt             #+#    #+#              #
-#    Updated: 2025/02/19 20:38:14 by wcapt            ###   ########.fr        #
+#    Updated: 2025/02/21 14:30:01 by wcapt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ LIBFT = $(LIBFT_DIR)/libft.a
 # Fichiers sources
 SRC = 	$(SRC_DIR)/checker.c $(SRC_DIR)/conditions.c $(SRC_DIR)/free.c	\
 		$(SRC_DIR)/init.c $(SRC_DIR)/main.c $(SRC_DIR)/utils.c 	\
-		$(SRC_DIR)/stack_a.c $(SRC_DIR)/stack_b.c $(SRC_DIR)/stack_ab.c
+		$(SRC_DIR)/stack_a.c $(SRC_DIR)/stack_b.c $(SRC_DIR)/stack_ab.c \
+		$(SRC_DIR)/push_swap1.c $(SRC_DIR)/push_swap2.c $(SRC_DIR)/push_swap3.c
 
 # Fichiers objets
 OBJ = $(SRC:.c=.o)

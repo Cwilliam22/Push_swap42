@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:55:39 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/20 13:57:30 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/21 14:58:34 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,20 @@ void	swap_ab(t_stacks *stacks);
 void	rotate_ab(t_stacks *stacks);
 void	reverse_rotate_ab(t_stacks *stacks);
 
-// push_swap.c
+// push_swap1.c
+int		calculate_cost(int place_a, int place_b, t_stacks *stacks);
+int		find_number(t_stacks *stacks);
+void	sort(t_stacks *stacks);
+void	push_swap(t_stacks *stacks);
+
+// push_swap2.c
+int		find_place_b(t_stacks *stacks, int num);
+void	up_num_ab2(t_stacks *stacks, int place_a, int place_b);
+void	up_num_ab1(t_stacks *stacks, int place_a, int place_b);
+void	push_back_to_stack_a(t_stacks *stacks);
+
+// push_swap3.c
+int		cost_up_ab2(t_stacks *stacks, int place_a, int place_b);
+int		cost_up_ab1(t_stacks *stacks, int place_a, int place_b);
 
 #endif
