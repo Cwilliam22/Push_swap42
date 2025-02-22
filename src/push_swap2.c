@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 11:19:04 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/21 15:00:28 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/22 21:15:23 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	find_place_b(t_stacks *stacks, int num)
 
 	max = 0;
 	min = 0;
-	i = 1;
+	i = 0;
 	while (i < stacks->size_b)
 	{
 		if (stacks->stack_b[i] > stacks->stack_b[max])
@@ -44,44 +44,31 @@ int	find_place_b(t_stacks *stacks, int num)
 void up_num_ab2(t_stacks *stacks, int place_a, int place_b)
 {
     if (place_a <= stacks->size_a / 2)
-    {
-        while (stacks->stack_a[0] != stacks->stack_a[place_a])
-            rotate_a(stacks);
-    }
+        rotate_a(stacks);
     else
-    {
-        while (stacks->stack_a[0] != stacks->stack_a[place_a])
-            reverse_rotate_a(stacks);
-    }
-
+        reverse_rotate_a(stacks);
     if (place_b <= stacks->size_b / 2)
-    {
-        while (stacks->stack_b[0] != stacks->stack_b[place_b])
-            rotate_b(stacks);
-    }
-    else
-    {
-        while (stacks->stack_b[0] != stacks->stack_b[place_b])
-            reverse_rotate_b(stacks);
-    }
+        rotate_b(stacks);
+	else
+		reverse_rotate_b(stacks);
 }
 
-void	up_num_ab1(t_stacks *stacks, int place_a, int place_b)
+void up_num_ab1(t_stacks *stacks, int place_a, int place_b)
 {
-	if (place_a <= stacks->size_a / 2 && place_b <= stacks->size_b / 2)
-	{
-		while (stacks->stack_a[0] != stacks->stack_a[place_a] && 
-			stacks->stack_b[0] != stacks->stack_b[place_b])
-			rotate_ab(stacks);
-	}
-	else if (place_a > stacks->size_a / 2 && place_b > stacks->size_b /2)
-	{
-		while (stacks->stack_a[0] != stacks->stack_a[place_a] && 
-			stacks->stack_b[0] != stacks->stack_b[place_b])
-			reverse_rotate_ab(stacks);
-	}
-	up_num_ab2(stacks, place_a, place_b);
+    if (place_a <= stacks->size_a / 2 && place_b <= stacks->size_b / 2)
+        rotate_ab(stacks);
+    else if (place_a > stacks->size_a / 2 && place_b > stacks->size_b / 2)
+        reverse_rotate_ab(stacks);
+    if (place_a == 1 && place_b == 1)
+        swap_ab(stacks);
+    else if (place_a == 1)
+        swap_a(stacks);
+    else if (place_b == 1)
+        swap_b(stacks);
+
+    cost_up_ab2(stacks, place_a, place_b);
 }
+
 
 void	push_back_to_stack_a(t_stacks *stacks)
 {

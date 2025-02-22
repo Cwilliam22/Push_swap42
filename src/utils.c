@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:38 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/20 14:02:54 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/22 19:37:59 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,28 @@ long	ft_atol(const char *str)
 char	*concat_args(int argc, char **argv)
 {
 	char	*dest;
-	int		nbr_arg;
 	char	*temp;
+	int		i;
 
-	nbr_arg = argc - 2;
-	dest = ft_strdup("");
-	while (argc > 0)
+	dest = ft_strdup(argv[1]); 
+	i = 2;
+	while (i < argc)
 	{
 		temp = dest;
-		dest = ft_strjoin(dest, *argv);
-		free(temp);
-		if (argc > 1)
+		dest = ft_strjoin(dest, " ");
+		if (!dest)
 		{
-			temp = dest;
-			dest = ft_strjoin(dest, " ");
 			free(temp);
+			return (NULL);
 		}
-		argv++;
-		nbr_arg--;
+		temp = dest;
+		dest = ft_strjoin(dest, argv[i]);
+		if (!dest)  
+		{
+			free(temp);
+			return (NULL);
+		}
+		i++;
 	}
 	return (dest);
 }

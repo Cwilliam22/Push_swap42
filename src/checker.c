@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:19:00 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/20 13:57:51 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/22 20:00:30 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	checks_conditions(char **tab_arg)
 {
 	if (is_empty(tab_arg))
-		return (2);
+		return (ft_printf("is_empty()\n"), 2);
 	if (!not_number(tab_arg))
-		return (1);
+		return (ft_printf("1\n"), 1);
 	if (!int_max(tab_arg))
-		return (1);
+		return (ft_printf("1\n"), 1);
 	if (check_duplicate(tab_arg))
-		return (1);
+		return (ft_printf("1\n"), 1);
 	if (is_sorted(tab_arg))
-		return (2);
+		return (ft_printf("is_sorted\n"), 2);
 	return (0);
 }
 
@@ -38,16 +38,17 @@ int	checks(int argc, char **argv)
 	else
 	{
 		string_arg = concat_args(argc, argv);
+		if (!string_arg)
+			return (0);
 		tab_arg = ft_split(string_arg, ' ');
 		free(string_arg);
 	}
+	if (!tab_arg)
+		return (0);
 	get_value = checks_conditions(tab_arg);
 	free_tab(tab_arg);
 	if (get_value == 1)
-	{
-		ft_printf("Error !/n");
-		return (0);
-	}
+		return (ft_printf("Error !/n"), 0);
 	else if (get_value == 2)
 		return (0);
 	return (1);

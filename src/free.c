@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:18:35 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/20 13:59:16 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/22 18:06:38 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	free_tab(char **tab_arg)
 {
+	int	i;
+
+	i = 0;
 	if (!tab_arg)
 		return ;
-	while (*tab_arg)
+	while (tab_arg[i])
 	{
-		free (*tab_arg);
-		tab_arg++;
+		free (tab_arg[i]);
+		i++;
 	}
 	free(tab_arg);
 }

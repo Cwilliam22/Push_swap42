@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:00:00 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/20 13:58:52 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/22 20:03:12 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	is_empty(char **tab_arg)
 	while (*tab_arg)
 	{
 		if (**tab_arg == '\0')
-			return (0);
+			return (1);
 		tab_arg++;
 	}
-	return (1);
+	return (0);
 }
 
 int	not_number(char **tab_arg)
@@ -50,15 +50,15 @@ int	not_number(char **tab_arg)
 int	int_max(char **tab_arg)
 {
 	long int	num;
+	int			i;
 
-	while (*tab_arg)
+	i = 0;
+	while (tab_arg[i])
 	{
-		num = ft_atol(*tab_arg);
-		if (num > 2147483647)
+		num = ft_atol(tab_arg[i]);
+		if (num > 2147483647 || num < -2147483648)
 			return (0);
-		if (num < -2147483648)
-			return (0);
-		tab_arg++;
+		i++;
 	}
 	return (1);
 }

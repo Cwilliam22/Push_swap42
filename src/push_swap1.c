@@ -6,7 +6,7 @@
 /*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:21:53 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/21 14:57:41 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/22 20:52:56 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,21 @@ int	find_number(t_stacks *stacks)
 	int	cost;
 	int	temp;
 	int	place;
-	int	num;
+	int	place_b;
 
-	i = 1;
-	cost = calculate_cost(i, find_place_b(stacks, stacks->stack_a[0]), stacks);
-	place = 0;
-	while (i < stacks->size_a)
+	i = 0;
+	place_b = find_place_b(stacks, stacks->stack_a[i]);
+	cost = calculate_cost(i, place_b, stacks);
+	place = i;
+	while (++i < stacks->size_a)
 	{
-		num = stacks->stack_a[i];
-		temp = calculate_cost(i, find_place_b(stacks, num), stacks);
+		place_b = find_place_b(stacks, stacks->stack_a[i]);
+		temp = calculate_cost(i, place_b, stacks);
 		if (temp < cost)
 		{
 			cost = temp;
 			place = i;
 		}
-		i++;
 	}
 	return (place);
 }
@@ -56,24 +56,21 @@ void	sort(t_stacks *stacks)
 	num = stacks->stack_a[place_a];
 	place_b = find_place_b(stacks, num);
 	up_num_ab1(stacks, place_a, place_b);
-	push_b(stacks);
+	if (stacks->size_a > 1)
+		push_b(stacks);
 }
 
 void	push_swap(t_stacks *stacks)
 {
-	push_b(stacks);
-	push_b(stacks);
+	if (stacks->size_a > 1)
+		push_b(stacks);
+	if (stacks->size_a > 1)
+		push_b(stacks);
 	while (stacks->size_a > 3)
-	{
 		sort(stacks);
-	}
-	/*if (stacks->size_a == 1)
-		sort1(stacks);
-	else if (stacks->size_a == 2)
-		sort2(stacks);
-	else
-		sort3(stacks);*/
-	push_back_to_stack_a(stacks);
+	//sort3(stacks);
+	if	(stacks->size_b > 0)
+		push_back_to_stack_a(stacks);
 }
 
 /*
