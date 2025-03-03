@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
+/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:38 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/22 19:37:59 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/03 13:01:31 by williamcapt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,39 @@ char	*concat_args(int argc, char **argv)
 		i++;
 	}
 	return (dest);
+}
+
+
+void	find_max(t_stacks *stacks)
+{
+	int i;
+	
+	i = 0;
+	stacks->max_3 = stacks->stack_a[0];
+	while (stacks->stack_a[i])
+	{
+		if (stacks->stack_a[i] > stacks->max_3)
+		{
+			stacks->max_1 = stacks->max_2;
+			stacks->max_2 = stacks->max_3;
+			stacks->max_3 = stacks->stack_a[i];
+		}
+		else if (stacks->stack_a[i] < stacks->max_3 
+			&& stacks->stack_a[i] > stacks->max_2)
+		{
+			stacks->max_1 = stacks->max_2;
+			stacks->max_2 = stacks->stack_a[i];
+		}
+		else if (stacks->stack_a[i] < stacks->max_3 
+			&& stacks->stack_a[i] < stacks->max_2 
+			&& stacks->stack_a[i] > stacks->max_1)
+			stacks->max_1 = stacks->stack_a[i];		
+		i++;
+	}
+
+}
+void	push_back_to_stack_a(t_stacks *stacks)
+{
+	while (stacks->size_b > 0)
+		push_a(stacks);
 }

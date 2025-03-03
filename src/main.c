@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
+/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:54 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/22 19:09:42 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/02/28 15:43:39 by williamcapt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	main(int argc, char **argv)
 	stacks.size_b = 0;
 	stacks.stack_a = NULL;
 	stacks.stack_b = NULL;
+	stacks.max_size = 0;
+	stacks.max_1 = 0;
+	stacks.max_2 = 0;
+	stacks.max_3 = 0;
+	
 	if (!checks(argc, argv))
 		return (1);
 	if (!init_stacks(argc, argv, &stacks))

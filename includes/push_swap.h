@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
+/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:55:39 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/21 14:58:34 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/03 11:03:49 by williamcapt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ typedef struct s_stacks
 	int	size_a;
 	int	size_b;
 	int	max_size;
+	int	max_1;
+	int max_2;
+	int max_3;
 }	t_stacks;
 
 // checker.c
@@ -47,6 +50,8 @@ int		init_stacks(int argc, char **argv, t_stacks *stacks);
 // utils.c
 long	ft_atol(const char *str);
 char	*concat_args(int argc, char **argv);
+void	find_max(t_stacks *stacks);
+void	push_back_to_stack_a(t_stacks *stacks);
 
 // stack_a.c
 void	swap_a(t_stacks *stacks);
@@ -69,16 +74,21 @@ void	reverse_rotate_ab(t_stacks *stacks);
 int		calculate_cost(int place_a, int place_b, t_stacks *stacks);
 int		find_number(t_stacks *stacks);
 void	sort(t_stacks *stacks);
+void	sort3(t_stacks *stacks);
 void	push_swap(t_stacks *stacks);
 
 // push_swap2.c
 int		find_place_b(t_stacks *stacks, int num);
-void	up_num_ab2(t_stacks *stacks, int place_a, int place_b);
 void	up_num_ab1(t_stacks *stacks, int place_a, int place_b);
-void	push_back_to_stack_a(t_stacks *stacks);
+void	up_num_ab2(t_stacks *stacks, int place_a, int place_b);
+void	up_num_ab3(t_stacks *stacks, int place_a);
+void	up_num_ab4(t_stacks *stacks, int place_b);
 
 // push_swap3.c
-int		cost_up_ab2(t_stacks *stacks, int place_a, int place_b);
 int		cost_up_ab1(t_stacks *stacks, int place_a, int place_b);
+int		cost_up_ab2(t_stacks *stacks, int place_a, int place_b);
+int		cost_up_ab3(t_stacks *stacks, int place_a);
+int		cost_up_ab4(t_stacks *stacks, int place_b);
+void sort_b(t_stacks *stacks);
 
 #endif

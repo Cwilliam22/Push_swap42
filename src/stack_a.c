@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
+/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:02:40 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/20 14:01:51 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/01 17:01:56 by williamcapt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ void	push_a(t_stacks *stacks)
 	temp = stacks->stack_b[0];
 	if (stacks->size_b == 0)
 		return ;
-	stacks->size_b--;
-	stacks->size_a++;
+	
 	while (i < stacks->size_b)
 	{
 		stacks->stack_b[i] = stacks->stack_b[i + 1];
 		i++;
 	}
+	stacks->size_b--;
+	stacks->size_a++;
 	i = stacks->size_a - 1;
 	while (i > 0)
 	{
