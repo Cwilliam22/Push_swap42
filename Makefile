@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+         #
+#    By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/19 13:14:48 by wcapt             #+#    #+#              #
-#    Updated: 2025/02/21 14:30:01 by wcapt            ###   ########.fr        #
+#    Updated: 2025/03/10 16:22:05 by williamcapt      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 
 # Compilateur et flags
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 # Dossiers
 SRC_DIR	= src
@@ -26,7 +26,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 SRC = 	$(SRC_DIR)/checker.c $(SRC_DIR)/conditions.c $(SRC_DIR)/free.c	\
 		$(SRC_DIR)/init.c $(SRC_DIR)/main.c $(SRC_DIR)/utils.c 	\
 		$(SRC_DIR)/stack_a.c $(SRC_DIR)/stack_b.c $(SRC_DIR)/stack_ab.c \
-		$(SRC_DIR)/push_swap1.c $(SRC_DIR)/push_swap2.c $(SRC_DIR)/push_swap3.c
+		$(SRC_DIR)/sort.c
 
 # Fichiers objets
 OBJ = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:02:40 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/01 17:01:56 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/11 16:45:35 by williamcapt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	push_a(t_stacks *stacks)
 	temp = stacks->stack_b[0];
 	if (stacks->size_b == 0)
 		return ;
-	
 	while (i < stacks->size_b)
 	{
 		stacks->stack_b[i] = stacks->stack_b[i + 1];

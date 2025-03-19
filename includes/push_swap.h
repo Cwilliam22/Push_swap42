@@ -6,7 +6,7 @@
 /*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:55:39 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/03 11:03:49 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/11 15:17:10 by williamcapt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,30 +65,19 @@ void	push_b(t_stacks *stacks);
 void	rotate_b(t_stacks *stacks);
 void	reverse_rotate_b(t_stacks *stacks);
 
+// sort.c
+void	radix_sort(t_stacks *stacks);
+//static void	radix_sort_stack_b(t_stacks *game, int size_b, int bit_size, int j);
+//int		is_array_b_sorted(t_stacks *stacks);
+int		is_array_a_sorted(t_stacks *stacks);
+void	sort_more_than_3_elements(t_stacks *stacks);
+void	sort_three_elements(t_stacks *stacks);
+
 // stack_ab.c
 void	swap_ab(t_stacks *stacks);
 void	rotate_ab(t_stacks *stacks);
 void	reverse_rotate_ab(t_stacks *stacks);
 
-// push_swap1.c
-int		calculate_cost(int place_a, int place_b, t_stacks *stacks);
-int		find_number(t_stacks *stacks);
-void	sort(t_stacks *stacks);
-void	sort3(t_stacks *stacks);
-void	push_swap(t_stacks *stacks);
-
-// push_swap2.c
-int		find_place_b(t_stacks *stacks, int num);
-void	up_num_ab1(t_stacks *stacks, int place_a, int place_b);
-void	up_num_ab2(t_stacks *stacks, int place_a, int place_b);
-void	up_num_ab3(t_stacks *stacks, int place_a);
-void	up_num_ab4(t_stacks *stacks, int place_b);
-
-// push_swap3.c
-int		cost_up_ab1(t_stacks *stacks, int place_a, int place_b);
-int		cost_up_ab2(t_stacks *stacks, int place_a, int place_b);
-int		cost_up_ab3(t_stacks *stacks, int place_a);
-int		cost_up_ab4(t_stacks *stacks, int place_b);
-void sort_b(t_stacks *stacks);
+void print_stacks(t_stacks *stacks);
 
 #endif

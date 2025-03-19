@@ -6,13 +6,13 @@
 /*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:38 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/03 13:01:31 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/11 13:16:54 by williamcapt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h" 
 
-static int	ft_isspace(int c)
+static	int	ft_isspace(int c)
 {
 	if (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32)
 		return (1);
@@ -51,7 +51,7 @@ char	*concat_args(int argc, char **argv)
 	char	*temp;
 	int		i;
 
-	dest = ft_strdup(argv[1]); 
+	dest = ft_strdup(argv[1]);
 	i = 2;
 	while (i < argc)
 	{
@@ -64,7 +64,7 @@ char	*concat_args(int argc, char **argv)
 		}
 		temp = dest;
 		dest = ft_strjoin(dest, argv[i]);
-		if (!dest)  
+		if (!dest)
 		{
 			free(temp);
 			return (NULL);
@@ -73,7 +73,6 @@ char	*concat_args(int argc, char **argv)
 	}
 	return (dest);
 }
-
 
 void	find_max(t_stacks *stacks)
 {
@@ -103,6 +102,7 @@ void	find_max(t_stacks *stacks)
 	}
 
 }
+
 void	push_back_to_stack_a(t_stacks *stacks)
 {
 	while (stacks->size_b > 0)
