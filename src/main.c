@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wcapt <wcapt@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:54 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/11 16:12:03 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/20 15:00:31 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*
 #include <stdio.h>
 
 void	print_stacks(t_stacks *stacks)
@@ -39,6 +40,7 @@ void	print_stacks(t_stacks *stacks)
 	}
 	printf("=======================\n\n");
 }
+*/
 
 int	main(int argc, char **argv)
 {

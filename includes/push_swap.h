@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wcapt <wcapt@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:55:39 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/11 15:17:10 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/20 14:59:51 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,24 @@ void	push_b(t_stacks *stacks);
 void	rotate_b(t_stacks *stacks);
 void	reverse_rotate_b(t_stacks *stacks);
 
-// sort.c
-void	radix_sort(t_stacks *stacks);
-//static void	radix_sort_stack_b(t_stacks *game, int size_b, int bit_size, int j);
-//int		is_array_b_sorted(t_stacks *stacks);
-int		is_array_a_sorted(t_stacks *stacks);
-void	sort_more_than_3_elements(t_stacks *stacks);
-void	sort_three_elements(t_stacks *stacks);
-
 // stack_ab.c
 void	swap_ab(t_stacks *stacks);
 void	rotate_ab(t_stacks *stacks);
 void	reverse_rotate_ab(t_stacks *stacks);
 
-void print_stacks(t_stacks *stacks);
+// sort1.c
+int		*copy_stack_a(t_stacks *stacks);
+int		*bubble_sort(t_stacks *stacks);
+void	number_to_index(t_stacks *stacks);
+int		get_max_bits(t_stacks *stacks);
+void	radix_sort(t_stacks *stacks);
+
+// sort2.c
+
+void	sort_three_elements(t_stacks *stacks);
+void	sort_more_than_3_elements(t_stacks *stacks);
+int		is_array_a_sorted(t_stacks *stacks);
+
+//void print_stacks(t_stacks *stacks);
 
 #endif
