@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt <wcapt@student.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: wcapt <wcapt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:55:11 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/20 14:55:31 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/21 23:50:28 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@ void	sort_three_elements(t_stacks *stacks)
 
 void	sort_more_than_3_elements(t_stacks *stacks)
 {
-	int size;
-	
+	int	size;
+
 	size = stacks->size_a;
 	find_max(stacks);
 	while (size > 3)
 	{
-		if (stacks->stack_a[0] == stacks->max_1 ||
-			stacks->stack_a[0] == stacks->max_2 ||
-			stacks->stack_a[0] == stacks->max_3)
+		if (stacks->stack_a[0] == stacks->max_1
+			|| stacks->stack_a[0] == stacks->max_2
+			|| stacks->stack_a[0] == stacks->max_3)
 			rotate_a(stacks);
 		else
 		{

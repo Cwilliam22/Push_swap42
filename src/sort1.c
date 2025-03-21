@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt <wcapt@student.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: wcapt <wcapt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 13:03:37 by williamcapt       #+#    #+#             */
-/*   Updated: 2025/03/20 15:15:14 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/22 00:05:38 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	*bubble_sort(t_stacks *stacks)
 	return (sorted);
 }
 
-void	number_to_index(t_stacks *stacks)
+int	number_to_index(t_stacks *stacks)
 {
 	int	i;
 	int	j;
@@ -67,7 +67,7 @@ void	number_to_index(t_stacks *stacks)
 	i = 0;
 	sorted = bubble_sort(stacks);
 	if (!sorted)
-		return ;
+		return (0);
 	while (i < stacks->size_a)
 	{
 		j = 0;
@@ -83,6 +83,7 @@ void	number_to_index(t_stacks *stacks)
 		i++;
 	}
 	free(sorted);
+	return (0);
 }
 
 int	get_max_bits(t_stacks *stacks)
@@ -115,9 +116,8 @@ void	radix_sort(t_stacks *stacks)
 	int	size;
 	int	pushed;
 
-	number_to_index(stacks);
+	j = number_to_index(stacks);
 	bit_size = get_max_bits(stacks);
-	j = 0;
 	while (j < bit_size)
 	{
 		size = stacks->size_a;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wcapt <wcapt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:38 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/11 13:16:54 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/21 23:51:34 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ char	*concat_args(int argc, char **argv)
 
 void	find_max(t_stacks *stacks)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	stacks->max_3 = stacks->stack_a[0];
 	while (stacks->stack_a[i])
@@ -88,19 +88,18 @@ void	find_max(t_stacks *stacks)
 			stacks->max_2 = stacks->max_3;
 			stacks->max_3 = stacks->stack_a[i];
 		}
-		else if (stacks->stack_a[i] < stacks->max_3 
+		else if (stacks->stack_a[i] < stacks->max_3
 			&& stacks->stack_a[i] > stacks->max_2)
 		{
 			stacks->max_1 = stacks->max_2;
 			stacks->max_2 = stacks->stack_a[i];
 		}
-		else if (stacks->stack_a[i] < stacks->max_3 
-			&& stacks->stack_a[i] < stacks->max_2 
+		else if (stacks->stack_a[i] < stacks->max_3
+			&& stacks->stack_a[i] < stacks->max_2
 			&& stacks->stack_a[i] > stacks->max_1)
-			stacks->max_1 = stacks->stack_a[i];		
+			stacks->max_1 = stacks->stack_a[i];
 		i++;
 	}
-
 }
 
 void	push_back_to_stack_a(t_stacks *stacks)

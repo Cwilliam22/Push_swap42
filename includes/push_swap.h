@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt <wcapt@student.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: wcapt <wcapt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:55:39 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/20 14:59:51 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/22 00:00:09 by wcapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct s_stacks
 	int	size_b;
 	int	max_size;
 	int	max_1;
-	int max_2;
-	int max_3;
+	int	max_2;
+	int	max_3;
 }	t_stacks;
 
 // checker.c
@@ -73,7 +73,7 @@ void	reverse_rotate_ab(t_stacks *stacks);
 // sort1.c
 int		*copy_stack_a(t_stacks *stacks);
 int		*bubble_sort(t_stacks *stacks);
-void	number_to_index(t_stacks *stacks);
+int		number_to_index(t_stacks *stacks);
 int		get_max_bits(t_stacks *stacks);
 void	radix_sort(t_stacks *stacks);
 
