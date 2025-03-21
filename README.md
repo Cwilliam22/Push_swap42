@@ -10,6 +10,7 @@ Fonctionnement :
 Le programme prend en entrée une série d'entiers non triés en arguments et affiche une suite d'instructions (parmi un set prédéfini) qui permettent de trier les nombres.
 
 Exemple : 
+
 $ ./push_swap 2 1 3
 sa
 
