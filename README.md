@@ -12,6 +12,7 @@ Le programme prend en entrée une série d'entiers non triés en arguments et af
 Exemple : 
 
 $ ./push_swap 2 1 3
+
 sa
 
 Instructions disponibles : 
