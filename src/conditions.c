@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conditions.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt < wcapt@student.42lausanne.ch >      +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:00:00 by wcapt             #+#    #+#             */
-/*   Updated: 2025/02/22 20:03:12 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/27 12:53:40 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	is_empty(char **tab_arg)
 {
 	while (*tab_arg)
 	{
-		if (**tab_arg == '\0')
-			return (1);
+		if (**tab_arg != '\0')
+			return (0);
 		tab_arg++;
 	}
-	return (0);
+	return (1);
 }
 
 int	not_number(char **tab_arg)
@@ -56,7 +56,7 @@ int	int_max(char **tab_arg)
 	while (tab_arg[i])
 	{
 		num = ft_atol(tab_arg[i]);
-		if (num > 2147483647 || num < -2147483648)
+		if (num > INT_MAX || num < INT_MIN)
 			return (0);
 		i++;
 	}

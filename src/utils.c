@@ -3,38 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt <wcapt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:17:38 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/21 23:51:34 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/27 14:49:00 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h" 
 
+/*
 static	int	ft_isspace(int c)
 {
 	if (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32)
 		return (1);
 	return (0);
 }
+*/
 
 long	ft_atol(const char *str)
 {
-	size_t	i;
+	int		i;
 	int		sign;
 	long	result;
 
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (ft_isspace(str[i]))
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '+' && str[i + 1] != '-')
-		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -57,18 +58,14 @@ char	*concat_args(int argc, char **argv)
 	{
 		temp = dest;
 		dest = ft_strjoin(dest, " ");
+		free(temp);
 		if (!dest)
-		{
-			free(temp);
 			return (NULL);
-		}
 		temp = dest;
 		dest = ft_strjoin(dest, argv[i]);
+		free(temp);
 		if (!dest)
-		{
-			free(temp);
 			return (NULL);
-		}
 		i++;
 	}
 	return (dest);

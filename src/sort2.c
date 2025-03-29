@@ -3,63 +3,93 @@
 /*                                                        :::      ::::::::   */
 /*   sort2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt <wcapt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:55:11 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/21 23:50:28 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/28 15:40:47 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_three_elements(t_stacks *stacks)
+int	find_min(t_stacks *stacks)
 {
-	find_max(stacks);
-	if (stacks->stack_a[0] == stacks->max_3
-		&& stacks->stack_a[1] == stacks->max_2)
+	int	i;
+	int	min;
+	int	index;
+
+	i = 0;
+	min = stacks->stack_a[0];
+	index = 0;
+	while (i < stacks->size_a)
 	{
-		rotate_a(stacks);
-		swap_a(stacks);
+		if (stacks->stack_a[i] < min)
+		{
+			min = stacks->stack_a[i];
+			index = i;
+		}
+		i++;
 	}
-	else if (stacks->stack_a[0] == stacks->max_3
-		&& stacks->stack_a[1] == stacks->max_1)
-		rotate_a(stacks);
-	else if (stacks->stack_a[0] == stacks->max_2
-		&& stacks->stack_a[1] == stacks->max_1)
-		swap_a(stacks);
-	else if (stacks->stack_a[0] == stacks->max_2
-		&& stacks->stack_a[1] == stacks->max_3)
-		reverse_rotate_a(stacks);
-	else if (stacks->stack_a[0] == stacks->max_1
-		&& stacks->stack_a[1] == stacks->max_3)
-	{
-		reverse_rotate_a(stacks);
-		swap_a(stacks);
-	}
+	return (index);
 }
 
-void	sort_more_than_3_elements(t_stacks *stacks)
+void	sort_three(t_stacks *stacks)
 {
-	int	size;
+	int	a;
+	int	b;
+	int	c;
 
-	size = stacks->size_a;
-	find_max(stacks);
-	while (size > 3)
+	a = stacks->stack_a[0];
+	b = stacks->stack_a[1];
+	c = stacks->stack_a[2];
+	if (a > b && b < c && a < c)
+		swap_a(stacks);
+	else if (a > b && b > c)
 	{
-		if (stacks->stack_a[0] == stacks->max_1
-			|| stacks->stack_a[0] == stacks->max_2
-			|| stacks->stack_a[0] == stacks->max_3)
-			rotate_a(stacks);
-		else
-		{
-			push_b(stacks);
-			size--;
-		}
+		swap_a(stacks);
+		reverse_rotate_a(stacks);
 	}
-	sort_three_elements(stacks);
-	if (stacks->size_b == 2 && stacks->stack_b[0] < stacks->stack_b[1])
-		swap_b(stacks);
-	push_back_to_stack_a(stacks);
+	else if (a > b && b < c && a > c)
+		rotate_a(stacks);
+	else if (a < b && b > c && a < c)
+	{
+		swap_a(stacks);
+		rotate_a(stacks);
+	}
+	else if (a < b && b > c && a > c)
+		reverse_rotate_a(stacks);
+}
+
+void	sort_four(t_stacks *stacks)
+{
+	int	min_index;
+
+	min_index = find_min(stacks);
+	if (min_index <= stacks->size_a / 2)
+		while (min_index--)
+			rotate_a(stacks);
+	else
+		while (min_index++ < stacks->size_a)
+			reverse_rotate_a(stacks);
+	push_b(stacks);
+	sort_three(stacks);
+	push_a(stacks);
+}
+
+void	sort_five(t_stacks *stacks)
+{
+	int	min_index;
+
+	min_index = find_min(stacks);
+	if (min_index <= stacks->size_a / 2)
+		while (min_index--)
+			rotate_a(stacks);
+	else
+		while (min_index++ < stacks->size_a)
+			reverse_rotate_a(stacks);
+	push_b(stacks);
+	sort_four(stacks);
+	push_a(stacks);
 }
 
 int	is_array_a_sorted(t_stacks *stacks)

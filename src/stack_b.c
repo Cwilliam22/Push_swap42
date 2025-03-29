@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_b.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:03:21 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/11 16:46:02 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/26 15:40:44 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap_b(t_stacks *stacks)
 	temp = stacks->stack_b[0];
 	stacks->stack_b[0] = stacks->stack_b[1];
 	stacks->stack_b[1] = temp;
-	ft_printf("sb \n");
+	ft_putendl_fd(("sb"), 1);
 }
 
 void	push_b(t_stacks *stacks)
@@ -47,7 +47,7 @@ void	push_b(t_stacks *stacks)
 		i--;
 	}
 	stacks->stack_b[0] = temp;
-	ft_printf("pb \n");
+	ft_putendl_fd(("pb"), 1);
 }
 
 void	rotate_b(t_stacks *stacks)
@@ -65,7 +65,7 @@ void	rotate_b(t_stacks *stacks)
 		i++;
 	}
 	stacks->stack_b[stacks->size_b - 1] = temp;
-	ft_printf("rb \n");
+	ft_putendl_fd(("rb"), 1);
 }
 
 void	reverse_rotate_b(t_stacks *stacks)
@@ -83,5 +83,5 @@ void	reverse_rotate_b(t_stacks *stacks)
 		i--;
 	}
 	stacks->stack_b[0] = temp;
-	ft_printf("rrb \n");
+	ft_putendl_fd(("rrb"), 1);
 }

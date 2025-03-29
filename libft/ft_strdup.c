@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:10:25 by apiscopo          #+#    #+#             */
-/*   Updated: 2025/02/06 14:52:17 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/27 14:45:14 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *src)
 	size_t	i;
 
 	i = ft_strlen(src);
-	dest = (char *)malloc(sizeof(char) * i + 1);
+	dest = (char *)malloc(sizeof(char) * (i + 1));
 	if (!dest)
 		return (NULL);
 	i = 0;

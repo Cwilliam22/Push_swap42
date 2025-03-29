@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wcapt <wcapt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:55:39 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/22 00:00:09 by wcapt            ###   ########.fr       */
+/*   Updated: 2025/03/27 13:23:02 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <limits.h>
+# include <stdlib.h>
 # include "../libft/includes/libft.h"
 
 typedef struct s_stacks
@@ -78,11 +80,14 @@ int		get_max_bits(t_stacks *stacks);
 void	radix_sort(t_stacks *stacks);
 
 // sort2.c
-
-void	sort_three_elements(t_stacks *stacks);
-void	sort_more_than_3_elements(t_stacks *stacks);
+int		find_min(t_stacks *stacks);
+void	sort_three(t_stacks *stacks);
+void	sort_four(t_stacks *stacks);
+void	sort_five(t_stacks *stacks);
 int		is_array_a_sorted(t_stacks *stacks);
 
+// main.c
+void	two_to_five(t_stacks *stacks);
 //void print_stacks(t_stacks *stacks);
 
 #endif

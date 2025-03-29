@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: williamcapt <williamcapt@student.42.fr>    +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:19:00 by wcapt             #+#    #+#             */
-/*   Updated: 2025/03/09 21:21:31 by williamcapt      ###   ########.fr       */
+/*   Updated: 2025/03/27 13:26:53 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	checks_conditions(char **tab_arg)
 {
 	if (is_empty(tab_arg))
-		return (ft_printf("is_empty()\n"), 2);
+		return (2);
 	if (!not_number(tab_arg))
-		return (ft_printf("1\n"), 1);
+		return (1);
 	if (!int_max(tab_arg))
-		return (ft_printf("1\n"), 1);
+		return (1);
 	if (check_duplicate(tab_arg))
-		return (ft_printf("1\n"), 1);
+		return (1);
 	if (is_sorted(tab_arg))
-		return (ft_printf("is_sorted\n"), 2);
+		return (2);
 	return (0);
 }
 
@@ -48,7 +48,7 @@ int	checks(int argc, char **argv)
 	get_value = checks_conditions(tab_arg);
 	free_tab(tab_arg);
 	if (get_value == 1)
-		return (ft_printf("Error !/n"), 0);
+		return (ft_putendl_fd(("Error"), 2), 0);
 	else if (get_value == 2)
 		return (0);
 	return (1);
